@@ -1,7 +1,7 @@
 import { Command } from 'clipanion'
-import { Option } from 'clipanion'
+import { Option }  from 'clipanion'
 
-import { getUrl } from './utils'
+import { getUrl }  from './utils'
 
 export class GetUrlCommand extends Command {
   static paths = [['get', 'url']]

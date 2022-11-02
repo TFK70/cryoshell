@@ -1,1 +1,1 @@
-export  * from './get-url.util'
+export * from './get-url.util'
