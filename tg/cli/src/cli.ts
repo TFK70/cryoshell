@@ -1,7 +1,7 @@
-import { Cli } from 'clipanion'
+import { Cli }           from 'clipanion'
 
 import { GetUrlCommand } from './get-url.command'
-import { SendCommand } from './send.command'
+import { SendCommand }   from './send.command'
 
 const cli = new Cli({
   binaryLabel: `Telegram cli`,
@@ -14,4 +14,4 @@ cli.register(SendCommand)
 
 cli.runExit(process.argv.slice(2), {
   cwd: process.cwd(),
-});
+})
