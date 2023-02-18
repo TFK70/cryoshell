@@ -29,15 +29,17 @@ kubectl proxy --port 8080 &
 # Wait until proxy initializes
 sleep 1
 
+# Sets up istio-system on a cluster
+istioctl install -y
+
 # Sets up flux-system on a cluster
 flux bootstrap github \
+  --components-extra=image-reflector-controller,image-automation-controller \
   --owner=$GH_REPO_OWNER \
   --repository=$GH_REPO_NAME \
   --branch=$GH_REPO_BRANCH \
   --path=$GH_REPO_CLUSTER_PATH \
+  --read-write-key \
   --personal
-
-# Sets up istio-system on a cluster
-istioctl install -y
 
 echo 'Setup finished!'
