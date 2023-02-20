@@ -7,6 +7,7 @@
 # GITHUB_TOKEN=<github access token> (token must provide proper access rights to make your repo accessable within the cluster)
 # REGRU_USER=<regru login, most likely email>
 # REGRU_PASSWORD=<regru password>
+# ACME_EMAIL=<email used for ACME challenge>
 
 if ! [ -f .k3sconf ]; then
     echo 'Error: k3s setup configuration file does not exist (~/.k3sconf)'
