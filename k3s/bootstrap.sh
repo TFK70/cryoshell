@@ -23,7 +23,7 @@ curl -s https://fluxcd.io/install.sh | sudo bash
 # Installs istio ctl
 echo -e "-------------------\nInstalling Istioctl\n-------------------\n"
 curl -L https://istio.io/downloadIstio | sh -
-sudo cp -R istio-1.17.0/bin/istioctl /usr/local/bin/istioctl
+sudo cp -R istio-1.17.1/bin/istioctl /usr/local/bin/istioctl
 
 # Installs helm
 echo -e "---------------\nInstalling Helm\n---------------\n"
