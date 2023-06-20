@@ -1,0 +1,20 @@
+CMD=$1
+ARG=$2
+WORKSPACE_DIR=~/workspace
+CONTEXT_FILE=~/.pclictx
+
+if ! [ -f $CONTEXT_FILE ]; then
+  touch $CONTEXT_FILE
+fi
+
+if [ $CMD == "set-context" ]; then
+  echo $2 > $CONTEXT_FILE
+  echo "Current context is set to "$2
+else
+  ctx=$(cat $CONTEXT_FILE)
+  workdir=$WORKSPACE_DIR"/"$ctx"/"$1
+  currentdir=$(pwd)
+  cd $workdir
+  lvim .
+  cd $currentdir
+fi
